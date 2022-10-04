@@ -1,0 +1,13 @@
+Partials:
+
+Abstracts
+- colors
+    - create variables and a mixture of colors here
+- fonts
+    - select a font and copy paste here
+
+Components
+- weather
+- time
+- bus
+- canteen
