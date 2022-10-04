@@ -1,0 +1,67 @@
+Kravspec:
+
+Infoboard -> 
+	- overblik over aktiviteter på afdelingen
+	- muligt at vise andre informationer (eksempelvis ur, bustider, vejrudsigt, ugens menu, nyheder)
+	- Ingen brugerinteraktion med sitet
+	- Skal kunne vises på en 16:9 skærm
+
+Generelle krav:
+	- Sitet skal bygges op i de gængse standarder indenfor HTML, prekompileret CSS og Javascript
+	- Skal bruge javascript til at hente data fra de forskellige API'er
+	- Kan bruge Netlify
+
+Arbejdsform:
+	- Gruppe på 3+
+	- Brug Github til fil- og version styring
+	- ignorér scrum
+
+Indhold:
+	SEKTION 1
+	- Design (Wireframe og mockup af sitet)
+		- Sektion med ur, som viser den aktuelle tid samt en liste med aktuelle nyheder fra et nyhedsfeed efter eget valg
+		- https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.dr.dk%2Fnyheder%2Fservice%2Ffeeds%2Fallenyheder%23
+		
+		- Vejrudsigt i designet
+		- https://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric
+
+	SEKTION 2
+	- Visning af aktiviteter
+		- Skal vises med følgende informationer - Starttid for aktiviteten, Uddannelse, Fag, Holdnummer, Lokale navn
+		- Ikke-fagspecifikke aktiviteter skal fremgå i oversigten - GF1 Aktiviteter, Brobygnings-aktiviteter, Efteruddannelsesaktiviteter
+		- Tavlen skal vise aktuelle eller næstkommende aktiviteter - alt efter tidspunkt på dagen.
+		- Om morgenen skal dagens første aktiviteter vises, de næstkommende i frikvartererne og ved dagens afslutning skal den næste skoledags aktiviteter vises.
+		- Vedlagt opgaven er et dokument som giver et overblik over koderne til de forskellige uddannelseshold.
+		- https://iws.itcn.dk/techcollege/schedules?departmentcode=smed
+
+	SEKTION 3
+	- Ugens menu & bustider
+		- Alle retter hentes fra kantines API og vises i en liste med ugedag hvor den aktuelle dag er fremhævet.
+		- https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?type=json
+
+		- Bustider skal vise: Busnummer, retning, antal minutter til afgang
+		- https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1
+
+Kontakter:
+Rasmus Nygaard
+E-mail: rany@techcollege.dk
+
+Læringsmål:
+Denne opgave har til formål at træne dig i at:
+• kunne anvende og integrere relevante dataservices til udvikling af en webløsning.
+• kunne redegøre for brugen af synkron og asynkron dataoverførsel.
+• anvende versionsstyring- og samarbejdsværktøjer.
+• være bevidst om de forskellige roller i et teamsamarbejde.
+
+
+Gode råd:
+Vi arbejder med eksterne API’er. Det kan betyde at data og loadtid kan være uregelmæssige og
+det kan tage lang tid at hente data ned fra API’erne og nogle gange er de ikke tilgængelige.
+I kan altid kopiere JSON outputtet fra et API og gemme det i en lokal fil og så arbejde op imod den.
+Så får I selvfølgelig ikke friske data men det kan betale sig i udviklingsprocessen da det er nemt og
+hurtigt at tilgå en lokal fil. Desuden har flere af API’erne restriktioner på datakald hvilket betyder
+at I kan blive blokeret, hvis I laver for mange kald.
+
+
+Præsentation & Aflevering
+	- Begge sites skal afleveres som et link til gruppens Github repository
