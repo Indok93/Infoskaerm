@@ -3,9 +3,9 @@ import { formatDate } from "./dateFormat.js";
 // sætter vores container som en variabel
 const root = document.getElementById("schedule");
 // en variabel vi har lavet til at sætte maximal antal af activiteter på skærmen
-const max_activities = 8;
+const max_activities = 10;
 // set page update interval to 10000 milisekunds
-const upDatePage = 1000;
+const upDatePage = 100;
 
 // Apiendpoint for inforboardets aktiviteter
 const apiEndPoint = "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
@@ -48,18 +48,16 @@ const GroupDates = () => {
   const getActivities = () => {
     // write array of the activities you want to include
     const inCludedEducations = [
-        "h0mg100122",
-        "gwe080122",
-        "biw100522",
-        "Grafisk Tekniker",
-        "Grafisk teknik.",
+        "Webudvikler",
+        "Brobyg teknisk",
+        "Mediegrafiker",
     ];
 
     // start funktion to render activity table
     // functions are chained first .filter then .sort
     // filtreret og sorteret data
     renderActivityTable(
-      ApiData.filter((activity) => inCludedEducations.includes(activity.Team)).sort((a, b) => {
+      ApiData.filter((activity) => inCludedEducations.includes(activity.Education)).sort((a, b) => {
         if (a.StartDate === b.StartDate) {
           return a.Education < b.Education ? -1 : 1;
         } else {
