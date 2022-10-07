@@ -1,27 +1,53 @@
-// *{
-//     margin: 0;
-//     padding: 0;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
 
-// .activities{
-//     background-color: rgb(238, 196, 45);
-//     thead{
-//         background-color: rgb(238, 196, 45);
-//     }
-//     tbody{
-//         // color: white;
-//         .schedule-row{
-//             background-color: black;
-//             color: white;
-//             td{
-//                 border-left: none;
-//                 border-right: 5px black;
-//             }
-            
-//         }
-//     }
-// }
+body{
+    aspect-ratio: 16/9;
+    border: 1px solid black;
+}
+.screen{
+    
+}
+#schedule{
+    width: 50vw;
+    margin: auto;
+    font-family: 'Jost', sans-serif;
+    .activities{
+        border: 2px solid rgb(238, 196, 45);
+        border-radius: 2px;
+        .activity-headings{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(238, 196, 45);
+            font-weight: bold;
+            div{
+                
+            }
+        }
+    }
+    .schedule-row{
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgb(238, 196, 45);
+        background-color: black;
+        color: white;
+        .time{
+            font-weight: bold;
+        }
+        .education{
+            font-weight: bold;
+        }
+        .subject{
 
-.schedule-row{
-    border: 1px solid rgb(238, 196, 45);
+        }
+        .team{
+            font-weight: bold;
+        }
+        .room{
+            font-weight: bold;
+        }
+        div{
+        }
+    }
+    
 }

@@ -1,3 +1,41 @@
-.schedule-row {
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+body {
+  aspect-ratio: 16/9;
+  border: 1px solid black;
+}
+
+#schedule {
+  width: 50vw;
+  margin: auto;
+  font-family: "Jost", sans-serif;
+}
+#schedule .activities {
+  border: 2px solid rgb(238, 196, 45);
+  border-radius: 2px;
+}
+#schedule .activities .activity-headings {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(238, 196, 45);
+  font-weight: bold;
+}
+#schedule .schedule-row {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid rgb(238, 196, 45);
+  background-color: black;
+  color: white;
+}
+#schedule .schedule-row .time {
+  font-weight: bold;
+}
+#schedule .schedule-row .education {
+  font-weight: bold;
+}
+#schedule .schedule-row .team {
+  font-weight: bold;
+}
+#schedule .schedule-row .room {
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

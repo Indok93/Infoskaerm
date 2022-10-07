@@ -71,15 +71,26 @@ export const GroupDates = () => {
 
   const renderActivityTable = (data) => {
     // set top of table to variable html
-    let html = `<table class="activities">
-    <thead>
-    <tr>
-        <th>Kl.</th>
-        <th>Uddannelse</th>
-        <th>Fag</th>
-        <th>Hold</th>
-        <th>Lokale</th>
-    </tr></thead><tbody>
+    let html = `
+    <div class="activities">
+      <div class="activity-headings">
+        <div>
+          Tid
+        </div>
+        <div>
+          Uddannelse
+        </div>
+        <div>
+          Fag
+        </div>
+        <div>
+          Hold
+        </div>
+        <div>
+          Lokale
+        </div>
+      </div>
+    </div>
 `;
 
     // Henter dags datos aktiviteter/Timer ind i array arr_subjects
@@ -123,57 +134,29 @@ export const GroupDates = () => {
     });
     //
     //afslut table
-    html += `</tbody></table>`;
     root.innerHTML = html;
   };
 
   fetchApiData();
 };
 
-// switch to set colors on educations
-
-// const switchColors = (strcolor) => {
-//   switch (strcolor) {
-//     case "AMU indmeld":
-//       return "amu";
-
-//     case "Brobyg teknisk":
-//       return "brobyg";
-
-//     case "Data/komm.udd.":
-//     case "Webudvikler":
-//       return "web";
-
-//     case "Grafisk Tekniker":
-//     case "Grafisk teknik.":
-//       return "grafTek";
-
-//     case "Mediegrafiker":
-//       return "medieGraf";
-
-//     default:
-//       return "dot";
-//   }
-// };
-
 // funktion til at skabe række med data
 const createRow = (obj) => {
-  return `<tr class="schedule-row">
-      <td>${formatDate(obj.StartDate, "time")}</td>
-      
-      <td>${obj.Education}</td>
-      <td>${obj.Subject}</td>
-      <td>${obj.Team}</td>
-      <td >${obj.Room}</td>
-      </tr>`;
+  return `<div class="schedule-row">
+      <div class="time">${formatDate(obj.StartDate, "time")}</div>
+      <div class="education">${obj.Education}</div>
+      <div class="subject">${obj.Subject}</div>
+      <div class="team">${obj.Team}</div>
+      <div class="room">${obj.Room}</div>
+      </div>`;
 };
 
 //Sætter en overskrift med den næste dag (fx tirsdag d. 30 november)
 //når der ikke er flere aktiviterter på pågældene dag
 function createDayRow(item) {
-  return `<tr id="nextDay" class="schedule-row">
-            <td colspan="5">${item.day}</td>
-          </tr>`;
+  return `<div id="nextDay" class="schedule-row">
+            <div>${item.day}</div>
+          </div>`;
 }
 
 //funktion to convert from millisconds to seconds
