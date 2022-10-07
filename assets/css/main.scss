@@ -43,6 +43,7 @@ $duration: 30s;
   overflow: hidden;
   height: 4rem;
   background-color: rgba(#000, 0.9); 
+  border-top: 5px solid #FDD05E;
   padding-left: 100%;
   box-sizing: content-box;
 
@@ -68,7 +69,7 @@ $duration: 30s;
 
       display: inline-block;
       padding: 0 2px;
-      font-size: 30px;
+      font-size: 32px;
       color: #FDD05E;   
       font-family: 'Jost', sans-serif;  
     }
