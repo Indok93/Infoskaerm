@@ -27,9 +27,9 @@ let renderBusLine = () => {
 
   if (arrayData) {
     document.querySelector("#bus").innerHTML += `
-     <p class="">${apiData.direction}</p>
-     <p>${apiData.line}</p>
-    <p>${apiData.time}</p>
+     <p class="direction">${apiData.direction}</p>
+     <p class="line">${apiData.line}</p>
+    <p class="time">${apiData.time}</p>
  `;
   }
 };
