@@ -5,14 +5,14 @@ const root = document.getElementById("schedule");
 // en variabel vi har lavet til at sætte maximal antal af activiteter på skærmen
 const max_activities = 8;
 // set page update interval to 10000 milisekunds
-const upDatePage = 1000;
+const upDatePage = 1000000;
 
 // Apiendpoint for inforboardets aktiviteter
 const apiEndPoint = "https://iws.itcn.dk/techcollege/Schedules?departmentCode=smed";
 
 // functionen der startes fra main.js
 // og efterfølgende opdateres
-const GroupDates = () => {
+export const GroupDates = () => {
   const ApiData = [];
 
   // Henter dags dato
@@ -71,7 +71,7 @@ const GroupDates = () => {
 
   const renderActivityTable = (data) => {
     // set top of table to variable html
-    let html = `<table border="0" class="activities">
+    let html = `<table class="activities">
     <thead>
     <tr>
         <th>Kl.</th>
@@ -158,7 +158,7 @@ const GroupDates = () => {
 
 // funktion til at skabe række med data
 const createRow = (obj) => {
-  return `<tr>
+  return `<tr class="schedule-row">
       <td>${formatDate(obj.StartDate, "time")}</td>
       
       <td>${obj.Education}</td>
@@ -171,7 +171,7 @@ const createRow = (obj) => {
 //Sætter en overskrift med den næste dag (fx tirsdag d. 30 november)
 //når der ikke er flere aktiviterter på pågældene dag
 function createDayRow(item) {
-  return `<tr id="nextDay">
+  return `<tr id="nextDay" class="schedule-row">
             <td colspan="5">${item.day}</td>
           </tr>`;
 }
